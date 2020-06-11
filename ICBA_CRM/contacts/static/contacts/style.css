@@ -1,0 +1,77 @@
+
+
+*, ::after, ::before {
+    box-sizing: border-box;
+    border-width: thin;
+}
+
+
+
+
+table.dataTable thead th, table.dataTable thead td {
+    padding: 10px 10px 6px 10px;
+    border-top: 1px solid #111;
+}
+.pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover {
+    z-index: 3;
+    color: #fff;
+    cursor: default;
+    background-color: rgba(78, 157, 46, 0.9);
+}
+
+
+.center {
+	display: block;
+	margin-left: 40%;
+	margin-right: auto;
+	max-width: 60%;
+}
+
+.dataTables_wrapper{
+position:relative;
+clear:both;
+
+}
+
+.table-wrapper {
+        background: #fff;
+        padding: 0px 25px;
+        margin: 20px 0;
+		border-radius: 3px;
+		width: 90%;
+        margin-left: auto;
+        margin-right:auto;
+    }
+	.table-title {
+		padding-bottom: 15px;
+		background: rgba(78, 157, 46, 0.9);
+		color: #fff;
+		padding: 16px 30px;
+		margin: -20px -25px 10px;
+		border-radius: 3px 3px 0 0;
+    }
+    .table-title h2 {
+		margin: 2px -90px 0;
+		font-size: 34px;
+	}
+	.table-title .btn {
+		color: #566787;
+		float: right;
+		font-size: 13px;
+		background: #fff;
+		border: none;
+		min-width: 50px;
+		border-radius: 2px;
+		border: none;
+		outline: none !important;
+		margin-left: 10px;
+	}
+	.table-title .btn:hover, .table-title .btn:focus {
+        color: #566787;
+		background: #f2f2f2;
+	}
+	.table-title .btn i {
+		float: left;
+		font-size: 21px;
+		margin-right: 5px;
+}

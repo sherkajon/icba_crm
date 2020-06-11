@@ -1,0 +1,55 @@
+{%extends 'base.html' %}
+
+{% block head_title %} Organization | {{block.super}}{% endblock head_title %}
+
+{% block stylings %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'contacts/style.css' %}" type="text/css">
+{% endblock stylings %}
+
+{% block content%}
+
+
+
+  <div class="table-wrapper">
+    <table id="example" class="display nowrap" style="width:100%">
+            <thead>
+                <tr style="background-color: rgba(78, 157, 46, 0.9); color: white">
+                     <th>Name</th>
+                    <th>Category</th>
+                    <th>Address</th>
+                    <th>Website</th>
+                    <th>E-mail</th>
+                    <th>Phone</th>
+                </tr>
+            </thead>
+            <tbody>
+
+        {% for organization in organizations%}
+
+                <tr>
+                    <td>{{organization.Name}}</td>
+                    <td>{{organization.Category}}</td>
+                    <td>{{organization.Address}}</td>
+                    <td>{{organization.Website}}</td>
+                    <td>{{organization.Email}}</td>
+                    <td>{{organization.Phone}}</td>
+                </tr>
+
+        {%endfor%}
+
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th>Name</th>
+                    <th>Category</th>
+                    <th>Address</th>
+                    <th>Website</th>
+                    <th>E-mail</th>
+                    <th>Phone</th>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+
+{% endblock content%}
