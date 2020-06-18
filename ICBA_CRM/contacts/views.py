@@ -14,6 +14,7 @@ def organization(request):
     return render(request, 'organization.html', {'organizations': organizations})
 
 
-def about(request):
-    return render(request, 'about.html', {'title': 'About'})
+def menu(request):
+    menus = Menu.objects.all()
+    return render(request, 'nav.html', {'menu': menus})
 

@@ -4,7 +4,7 @@
 
 {% block stylings %}
     {% load static %}
-    <link rel="stylesheet" href="{% static 'contacts/style.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'contacts/jquery.dataTables.min.css' %}" type="text/css">
 {% endblock stylings %}
 
 {% block content%}
@@ -15,16 +15,16 @@
       <div class="table-title">
                 <div class="row">
                     <div class="col-sm-5">
-                        <span style="font-size:30">Contacts</span>
+                        <span style="font-size:21px">Contacts</span>
 
 					</div>
-					<div class="col-sm-7" style="top: 5px;">
+					<div class="col-sm-7" style="top: 0px;">
                         <a href="#" class="btn btn-primary"><i class="material-icons">&#xE147;</i> <span>Add New Contact</span></a>
 						<a href="#" class="btn btn-primary"><i class="material-icons">&#xE24D;</i> <span>Import from Excel</span></a>
 					</div>
                 </div>
             </div>
-    <table id="example" class="display nowrap" style="width:100%">
+    <table id="example" class="row-border hover stripe nowrap" style="width:100%">
             <thead>
                 <tr style="background-color: rgba(78, 157, 46, 0.9); color: white">
                     <th>First Name</th>

@@ -24,5 +24,5 @@ class Contact(models.Model):
 
 class Menu(models.Model):
     title = models.CharField(max_length=40)
-    link = models.URLField()
+    link = models.CharField(max_length=1041)
     alt = models.CharField(max_length=100)
