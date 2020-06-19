@@ -1,6 +1,8 @@
-{%extends 'base.html' %}
+{% extends 'base.html' %}
 
 {% block head_title %} Contact | {{block.super}}{% endblock head_title %}
+
+
 
 {% block stylings %}
     {% load static %}
@@ -15,18 +17,18 @@
       <div class="table-title">
                 <div class="row">
                     <div class="col-sm-5">
-                        <span style="font-size:21px">Contacts</span>
+                        <span style="font-size:24px">Contacts</span>
 
 					</div>
 					<div class="col-sm-7" style="top: 0px;">
                         <a href="#" class="btn btn-primary"><i class="material-icons">&#xE147;</i> <span>Add New Contact</span></a>
-						<a href="#" class="btn btn-primary"><i class="material-icons">&#xE24D;</i> <span>Import from Excel</span></a>
+						<a href="/upload-csv/" class="btn btn-primary"><i class="material-icons">&#xE24D;</i> <span>Import from Excel</span></a>
 					</div>
                 </div>
             </div>
-    <table id="example" class="row-border hover stripe nowrap" style="width:100%">
+    <table id="example" class="hover row-border nowrap" style="width:100%">
             <thead>
-                <tr style="background-color: rgba(78, 157, 46, 0.9); color: white">
+                <tr style="background-color: #f9f9f9; color: black">
                     <th>First Name</th>
                     <th>Last Name</th>
                     <th>Designation</th>
@@ -45,7 +47,7 @@
                     <td>{{contact.Email}}</td>
                     <td>{{contact.Phone_Number}}</td>
                     <td>{{contact.designation}}</td>
-                    <td>{{contact.Organization}}</td>
+                    <td>{{contact.Organizations}}</td>
                 </tr>
 
         {%endfor%}

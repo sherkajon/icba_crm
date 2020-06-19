@@ -19,12 +19,15 @@ from django.urls import path, include
 from django.views.generic import TemplateView
 from django.conf import settings
 from django.conf.urls.static import static
+from django.contrib import admin
+from contacts.views import excel_import_contacts
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('contacts.urls')),
     path('about/', TemplateView.as_view(template_name= 'about.html')),
-    path('', TemplateView.as_view(template_name= 'index.html'))
+    path('', TemplateView.as_view(template_name= 'index.html')),
+    path('upload-csv/', excel_import_contacts , name="profile_upload"),
 ]
 
 

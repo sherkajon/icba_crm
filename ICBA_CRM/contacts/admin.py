@@ -7,7 +7,7 @@ class OrganizationAdmin(admin.ModelAdmin):
 
 
 class ContactAdmin(admin.ModelAdmin):
-    list_display = ('First_Name', 'Last_Name', 'Email','Phone_Number','designation', 'Organization')
+    list_display = ('First_Name', 'Last_Name', 'Email','Phone_Number','designation', 'Organizations')
 
 class MenuAdmin(admin.ModelAdmin):
     list_display = ('title', 'link', 'alt')

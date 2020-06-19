@@ -19,7 +19,7 @@ class Contact(models.Model):
     Email = models.EmailField()
     Phone_Number = models.CharField(max_length=15)
     designation = models.CharField(max_length=60)
-    Organization = models.ForeignKey(Organization, null=True, on_delete=models.SET_NULL)
+    Organizations = models.ForeignKey(Organization, null=True, on_delete=models.SET_NULL)
 
 
 class Menu(models.Model):
