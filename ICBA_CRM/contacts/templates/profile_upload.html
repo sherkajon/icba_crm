@@ -1,11 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-    {% if messages %}
+ {% if messages %}
         {% for message in messages %}
             <div>
 <!--                | means OR operator-->
@@ -18,12 +11,10 @@
         {% csrf_token %}
         <label for="file1"> Upload a file</label>
         <input type="file" id="file1" name="file">
-        <small>Only accepts CSV files</small>
-        <button type="submit">Upload</button>
+        <br> <small>Only accepts CSV files</small>
+        <button type="submit" style="border: solid 1px grey">Upload</button>
     </form>
     {% endif %}
     {% for profile in profiles %}
     {{profile.name}}
     {% endfor %}
-</body>
-</html>

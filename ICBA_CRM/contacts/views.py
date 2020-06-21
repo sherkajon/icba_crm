@@ -1,30 +1,51 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from .models import Contact, Organization
 import csv, io
 from django.contrib import messages
+from .forms import AddOrganization
 
 
 # Create your views here.
+# contact.html
 def contact(request):
-    contacts = Contact.objects.all()
-    return render(request, 'contact.html', {'contacts': contacts})
+    all_contact_list = all_contacts(request)
+    import_csv = excel_import_contacts(request)
+    context = {'contacts': all_contact_list, 'import': import_csv}
+    return render(request, 'contact.html', context)
 
 
+# organization.html
 def organization(request):
+    all_organization_list = all_organizations(request)
+    import_csv = excel_import_organizations(request)
+    context = {'organizations': all_organization_list, 'import': import_csv}
+    return render(request, 'organization.html', context)
+
+
+# mini views
+
+# get all contacts and details
+def all_contacts(request):
+    contacts = Contact.objects.all()
+    return contacts
+
+
+# get all organizations and details
+def all_organizations(request):
     organizations = Organization.objects.all()
-    return render(request, 'organization.html', {'organizations': organizations})
+    return organizations
 
 
+# import from csv to contacts table
 def excel_import_contacts(request):
     # declaring template
-    template = "profile_upload.html"
+    template = "contact.html"
     data = Contact.objects.all()
-
 
     # prompt is a context variable that can have different values      depending on their context
     prompt = {
-        'order': 'Order of the CSV should be name, email, address,    phone, profile',
+        'order': 'Order of the CSV should be First_Name, Last_Name, Email, Phone_Number, designation, Organizations',
         'profiles': data
     }
     # GET request returns the value of the data with the specified key.
@@ -46,8 +67,71 @@ def excel_import_contacts(request):
             Email=column[2],
             Phone_Number=column[3],
             designation=column[4],
-            Organizations= Organization.objects.get(Name=column[5])
+            Organizations=Organization.objects.get(Name=column[5])
         )
     context = {}
-    return render(request, template, context)
+    return context
 
+
+# import from csv to organizations table
+def excel_import_organizations(request):
+    # declaring template
+    template = "organization.html"
+    data = Organization.objects.all()
+
+    # prompt is a context variable that can have different values      depending on their context
+    prompt = {
+        'order': 'Order of the CSV should be Name, Category, Address, Website, Email, Phone',
+        'profiles': data
+    }
+    # GET request returns the value of the data with the specified key.
+    if request.method == "GET":
+        return render(request, template, prompt)
+    csv_file = request.FILES['file']
+    # let's check if it is a csv file
+    if not csv_file.name.endswith('.csv'):
+        messages.error(request, 'THIS IS NOT A CSV FILE')
+
+    data_set = csv_file.read().decode('UTF-8')
+    # setup a stream which is when we loop through each line we are able to handle a data in a stream
+    io_string = io.StringIO(data_set)
+    next(io_string)
+    for column in csv.reader(io_string, delimiter=',', quotechar="|"):
+        _, created = Contact.objects.update_or_create(
+            Name=column[0],
+            Category=column[1],
+            Address=column[2],
+            Website=column[3],
+            Email=column[4],
+            Phone=column[5]
+        )
+    context = {}
+    return context
+
+
+def add_New_Organization(request):
+
+    org_form = AddOrganization(request.GET)
+    if request.method == "POST":
+        org_form = AddOrganization(request.POST or None)
+        if org_form.is_valid():
+            Organization.objects.create(**org_form.cleaned_data)
+        else:
+            print(org_form.errors)
+
+    context = {
+        'form': org_form
+    }
+    return render(request, "add_organization.html", context)
+
+
+def add_New_Contact(request):
+
+    form = AddOrganization(request.POST or None)
+    # if form.is_valid():
+    #     form.save()
+    #
+    # context = {
+    #     'form': form
+    # }
+    # return render(request, "add_organization.html", context)

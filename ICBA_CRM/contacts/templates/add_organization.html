@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load crispy_forms_tags %}
+
+<!-- Container -->
+<div class="container">
+    <h2>Add Organization</h2>
+<form action='.' method="post" novalidate>
+    {% csrf_token %}
+       <div class="form-group">
+            {{ form|crispy }}
+        </div>
+        <button type="submit" class="btn btn-primary" value="Save">Submit</button>
+</form>
+</div>
+
+
+
+<script>
+// Disable form submissions if there are invalid fields
+(function() {
+  'use strict';
+  window.addEventListener('load', function() {
+    // Get the forms we want to add validation styles to
+    var forms = document.getElementsByClassName('needs-validation');
+    // Loop over them and prevent submission
+    var validation = Array.prototype.filter.call(forms, function(form) {
+      form.addEventListener('submit', function(event) {
+        if (form.checkValidity() === false) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    });
+  }, false);
+})();
+
+</script>
+{% endblock %}

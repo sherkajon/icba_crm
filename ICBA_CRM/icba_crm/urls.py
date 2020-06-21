@@ -27,7 +27,6 @@ urlpatterns = [
     path('', include('contacts.urls')),
     path('about/', TemplateView.as_view(template_name= 'about.html')),
     path('', TemplateView.as_view(template_name= 'index.html')),
-    path('upload-csv/', excel_import_contacts , name="profile_upload"),
 ]
 
 

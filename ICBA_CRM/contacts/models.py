@@ -3,8 +3,8 @@ from django.db import models
 # Create your models here.
 
 class Organization(models.Model):
-    Name = models.CharField(max_length=100)
-    Category = models.CharField(max_length=200)
+    Name = models.CharField(max_length=100, null=False)
+    Category = models.CharField(max_length=200, null=False)
     Address = models.CharField(max_length=100)
     Website = models.URLField()
     Email = models.EmailField()
