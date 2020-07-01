@@ -26,8 +26,8 @@
                 </div>
             </div>
 
-       <div class="modal" id="myModal">
-    <div class="modal-dialog h-100 d-flex flex-column justify-content-center my-0">
+       <div class="modal fade" id="myModal">
+    <div class="modal-dialog">
       <div class="modal-content ">
 
         <!-- Modal Header -->
@@ -59,6 +59,7 @@
                     <th>Website</th>
                     <th>E-mail</th>
                     <th>Phone</th>
+                    <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
@@ -72,6 +73,10 @@
                     <td>{{organization.Website}}</td>
                     <td>{{organization.Email}}</td>
                     <td>{{organization.Phone}}</td>
+                      <td>
+                        <a href="{% url 'update_organization' organization.id %}"><i class="material-icons md-24" style="font-size: 24px; color: #FFC107" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+                        <a href="{% url 'delete_organization' pk=organization.id %}" class="confirm-delete" title="Delete" data-toggle="modal" data-target="#confirmModal" id="deleteButton{{contact.id}}"><i class="material-icons md-24" style="font-size: 24px; color: #F44336" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                    </td>
                 </tr>
 
         {%endfor%}
@@ -85,9 +90,29 @@
                     <th>Website</th>
                     <th>E-mail</th>
                     <th>Phone</th>
+                    <th>Actions</th>
                 </tr>
             </tfoot>
         </table>
     </div>
+
+
+<div class="modal fade" id="confirmModal" tabindex="-1" caller-id="" role="dialog" aria-labelledby="confirmModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body" id="modal-message">
+                Do you wish to proceed?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" id="confirmButtonModal">Confirm</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+  {% block script %}
+{% include 'TableScript.html' %}
+  {% endblock script %}
 
 {% endblock content%}

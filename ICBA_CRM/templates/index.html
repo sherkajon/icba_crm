@@ -1,8 +1,19 @@
 {% extends "base.html" %}
 {% block head_title %} Home | {{block.super}}{% endblock head_title %}
 
-
+{% block stylings %}
+<style>
+body {
+  background-image: url('https://www.pymnts.com/wp-content/uploads/2019/07/farm-big-bank-lending.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+</style>
+    {% endblock stylings %}
 
 {% block content%}
 <h1> index page</h1>
+
+
 {% endblock %}
