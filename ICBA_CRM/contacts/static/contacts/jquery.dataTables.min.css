@@ -203,7 +203,8 @@ table.dataTable,table.dataTable th,table.dataTable td {
     text-align: right;
     margin-right: 5px;}
 .dataTables_wrapper .dataTables_filter input {
-    margin-left: 0.5em}
+    margin-left: 0.5em;
+    border: solid 0.75px;}
 .dataTables_wrapper .dataTables_info {
     clear: both;
     float: left;

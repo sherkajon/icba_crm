@@ -4,115 +4,123 @@
 
 
 {% block stylings %}
-    {% load static %}
-  <link rel="stylesheet" href="{% static 'contacts/jquery.dataTables.min.css' %}" type="text/css">
+{% load static %}
+<link rel="stylesheet" href="{% static 'contacts/jquery.dataTables.min.css' %}" type="text/css">
 {% endblock stylings %}
 
 {% block content%}
 
 
+<div class="table-wrapper">
+    <div class="table-title">
+        <div class="row">
+            <div class="col-sm-5">
+                <span style="font-size:24px">Organizations</span>
 
-  <div class="table-wrapper">
-      <div class="table-title">
-                <div class="row">
-                    <div class="col-sm-5">
-                        <span style="font-size:24px">Organizations</span>
-
-					</div>
-					<div class="col-sm-7" style="top: 0px;">
-                        <a href="new_org/" class="btn btn-primary"><i class="material-icons">&#xE147;</i> <span>Add New Organization</span></a>
-						<a class="btn btn-primary" data-toggle="modal" data-target="#myModal"><i class="material-icons">&#xE24D;</i> <span>Import from Excel</span></a>
-                    </div>
-                </div>
             </div>
-
-       <div class="modal fade" id="myModal">
-    <div class="modal-dialog">
-      <div class="modal-content ">
-
-        <!-- Modal Header -->
-        <div class="modal-header">
-          <h4 class="modal-title">Import from CSV</h4>
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <div class="col-sm-7" style="top: 0px;">
+                <a href="new_org/" class="btn btn-primary"><i class="material-icons">&#xE147;</i> <span>Add New Organization</span></a>
+                <a class="btn btn-primary" data-toggle="modal" data-target="#myModal"><i
+                        class="material-icons">&#xE24D;</i> <span>Import from Excel</span></a>
+            </div>
         </div>
-
-        <!-- Modal body -->
-        <div class="modal-body">
-          {% include "profile_upload.html" %}
-        </div>
-
-        <!-- Modal footer -->
-        <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-        </div>
-
-      </div>
     </div>
-  </div>
+
+    <div class="modal fade" id="myModal">
+        <div class="modal-dialog">
+            <div class="modal-content ">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Import from CSV</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    {% include "profile_upload.html" %}
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
 
     <table id="example" class="hover row-border nowrap" style="width:100%">
-            <thead>
-                <tr style="background-color: #f9f9f9; color: black">
-                     <th>Name</th>
-                    <th>Category</th>
-                    <th>Address</th>
-                    <th>Website</th>
-                    <th>E-mail</th>
-                    <th>Phone</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody>
+        <thead>
+        <tr style="background-color: #f9f9f9; color: black">
+            <th>Name</th>
+            <th>Category</th>
+            <th>Address</th>
+            <th>Website</th>
+            <th>E-mail</th>
+            <th>Phone</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
 
         {% for organization in organizations%}
 
-                <tr>
-                    <td>{{organization.Name}}</td>
-                    <td>{{organization.Category}}</td>
-                    <td>{{organization.Address}}</td>
-                    <td>{{organization.Website}}</td>
-                    <td>{{organization.Email}}</td>
-                    <td>{{organization.Phone}}</td>
-                      <td>
-                        <a href="{% url 'update_organization' organization.id %}"><i class="material-icons md-24" style="font-size: 24px; color: #FFC107" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-                        <a href="{% url 'delete_organization' pk=organization.id %}" class="confirm-delete" title="Delete" data-toggle="modal" data-target="#confirmModal" id="deleteButton{{contact.id}}"><i class="material-icons md-24" style="font-size: 24px; color: #F44336" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
-                    </td>
-                </tr>
+        <tr>
+            <td>{{organization.Name}}</td>
+            <td>{{organization.Category}}</td>
+            <td>{{organization.Address}}</td>
+            <td>{{organization.Website}}</td>
+            <td>{{organization.Email}}</td>
+            <td>{{organization.Phone}}</td>
+            <td>
+                <a href="{% url 'update_organization' organization.id %}"><i class="material-icons md-24"
+                                                                             style="font-size: 24px; color: #FFC107"
+                                                                             data-toggle="tooltip"
+                                                                             title="Edit">&#xE254;</i></a>
+                <a href="{% url 'delete_organization' pk=organization.id %}" class="confirm-delete" title="Delete"
+                   data-toggle="modal" data-target="#confirmModal" id="deleteButton{{contact.id}}"><i
+                        class="material-icons md-24" style="font-size: 24px; color: #F44336" data-toggle="tooltip"
+                        title="Delete">&#xE872;</i></a>
+            </td>
+        </tr>
 
         {%endfor%}
 
-            </tbody>
-            <tfoot>
-                <tr>
-                    <th>Name</th>
-                    <th>Category</th>
-                    <th>Address</th>
-                    <th>Website</th>
-                    <th>E-mail</th>
-                    <th>Phone</th>
-                    <th>Actions</th>
-                </tr>
-            </tfoot>
-        </table>
-    </div>
+        </tbody>
+        <tfoot>
+        <tr>
+            <th>Name</th>
+            <th>Category</th>
+            <th>Address</th>
+            <th>Website</th>
+            <th>E-mail</th>
+            <th>Phone</th>
+            <th>Actions</th>
+        </tr>
+        </tfoot>
+    </table>
+</div>
 
 
-<div class="modal fade" id="confirmModal" tabindex="-1" caller-id="" role="dialog" aria-labelledby="confirmModalLabel" aria-hidden="true">
+<div class="modal fade" id="confirmModal" tabindex="-1" caller-id="" role="dialog" aria-labelledby="confirmModalLabel"
+     aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-body" id="modal-message">
-                Do you wish to proceed?
+                <p>Do you wish to proceed?</p>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                <button type="button" class="btn btn-primary" data-dismiss="modal" id="confirmButtonModal">Confirm</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" id="confirmButtonModal">Confirm
+                </button>
             </div>
         </div>
     </div>
 </div>
 
-  {% block script %}
+{% block script %}
 {% include 'TableScript.html' %}
-  {% endblock script %}
+{% endblock script %}
 
 {% endblock content%}
