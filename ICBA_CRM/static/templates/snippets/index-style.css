@@ -49,6 +49,7 @@ background: #65758e  url("https://www.ingeniumweb.com/Themes/IngeniumWeb/Content
     opacity:0.5;
 }
 .main-text{
+    position: absolute;
     top: 50%;
     transform: translateY(-50%);
     width: 100%;
@@ -75,7 +76,7 @@ border: 1px solid #563d7c;}
 padding-bottom: 2rem;
 }
 
-
+/*----3 column ---*/
 .welcome hr{
 border-top: 2px solid #b4b4b4;
  width: 95%;
@@ -124,7 +125,22 @@ color: #517fa4;
     color: #d5d5d5;
 }
 
+/*---Fixed section ---*/
+.margin{75% 0;}
 
+.parallax{
+    background: url("https://mocah.org/uploads/posts/5386464-desk-office-desktop-technology-laptop-computer-coding-mac-setup-network-electrical-keypad-tech-electronic-equipment-desktop-computer-portable-computer-personal-computer-notebook-iphone-phone-f.jpg") no-repeat fixed 100% center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	min-height: 300px;
+}
+
+parallax-inner{
+    padding-top: 30%;
+    padding-bottom: 30%;
+}
 
 /*---Media Queries --*/
 @media (max-width: 992px) {
@@ -175,6 +191,7 @@ figure {
           transform: translateZ(0);
   will-change: transform;
 }
+
 /*--- Bootstrap Padding Fix --*/
 [class*="col-"] {
     padding: 1rem;

@@ -3,70 +3,18 @@
 
 {% block stylings %}
 <style>
-*, ::after, ::before {
-	box-sizing: border-box;
-}
-body {
-	margin: 0;
-	font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
-	font-size: 1rem;
-	font-weight: 400;
-	line-height: 1.5;
-	color: #212529;
-	text-align: left;
-	background-color: #fff;
-}
-body {
-	font-family: "Merriweather Sans",arial,sans-serif;
-	color: #666;
-	font-size: 16px;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-}
-html {
-	font-family: sans-serif;
-	line-height: 1.15;
-	-webkit-text-size-adjust: 100%;
-	-webkit-tap-highlight-color: transparent;
-}
-:root {
-	--blue: #007bff;
-	--indigo: #6610f2;
-	--purple: #6f42c1;
-	--pink: #e83e8c;
-	--red: #dc3545;
-	--orange: #fd7e14;
-	--yellow: #ffc107;
-	--green: #28a745;
-	--teal: #20c997;
-	--cyan: #17a2b8;
-	--white: #fff;
-	--gray: #6c757d;
-	--gray-dark: #343a40;
-	--primary: #007bff;
-	--secondary: #6c757d;
-	--success: #28a745;
-	--info: #17a2b8;
-	--warning: #ffc107;
-	--danger: #dc3545;
-	--light: #f8f9fa;
-	--dark: #343a40;
-	--breakpoint-xs: 0;
-	--breakpoint-sm: 576px;
-	--breakpoint-md: 768px;
-	--breakpoint-lg: 992px;
-	--breakpoint-xl: 1200px;
-	--font-family-sans-serif: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
-	--font-family-monospace: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
-}
+
 .header-wrapper-about {
-	background: #65758e  url("/static/contacts/images/team sitting laptop.jpg") no-repeat 100% center;
+	background: #65758e  url("/static/templates/images/team sitting laptop.jpg") no-repeat 100% center;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
 	min-height: 400px;
+	opacity: 1.1;
 }
+
+
 article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
 	display: block;
 }
@@ -651,40 +599,6 @@ img {
 	margin-bottom: 15px;
 	color: #505c70;
 }
-.btn {
-	display: inline-block;
-	font-weight: 400;
-	color: #212529;
-	text-align: center;
-	vertical-align: middle;
-	cursor: pointer;
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
-	background-color: transparent;
-	border: 1px solid transparent;
-	padding: .375rem .75rem;
-	font-size: 1rem;
-	line-height: 1.5;
-	border-radius: .25rem;
-	transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-}
-a.btn-cta, .btn-cta {
-	padding: 8px 30px;
-}
-a.btn-cta-primary, .btn-cta-primary {
-	background: #eea740;
-	border: none;
-	color: #fff;
-}
-.btn, a.btn {
-	-webkit-transition: all 0.4s ease-in-out;
-	-moz-transition: all 0.4s ease-in-out;
-	-ms-transition: all 0.4s ease-in-out;
-	-o-transition: all 0.4s ease-in-out;
-	font-weight: bold;
-}
 .team .title {
 	font-size: 36px;
 	font-family: "Open Sans",arial,sans-serif;
@@ -794,7 +708,7 @@ a.btn-cta-primary, .btn-cta-primary {
 	padding-top: 160px;
 }
 .promo .title {
-	font-size: 36px;
+	font-size: 38px;
 	font-family: "Open Sans",arial,sans-serif;
 	font-weight: 800;
 	text-shadow: 0px 1px 1px rgba(0,0,0,0.5);
@@ -821,282 +735,13 @@ a.btn-cta-primary, .btn-cta-primary {
 	float: left;
 	line-height: 1.8;
 }
-/* @media all and (min-width:992px) */
-.header h1.logo {
-	float: left;
-	margin: inherit;
-}
-.navbar {
-	position: relative;
-	display: -ms-flexbox;
-	display: flex;
-	-ms-flex-wrap: wrap;
-	flex-wrap: wrap;
-	-ms-flex-align: center;
-	align-items: center;
-	-ms-flex-pack: justify;
-	justify-content: space-between;
-	padding: .5rem 1rem;
-}
-/* @media all and (min-width:768px) */
-.navbar-expand-md {
-	-ms-flex-flow: row nowrap;
-	flex-flow: row nowrap;
-	-ms-flex-pack: start;
-	justify-content: flex-start;
-}
-/* @media all and (min-width:992px) */
-.main-nav {
-	float: right !important;
-}
-.header .main-nav {
-	padding: 0;
-}
-button {
-	border-radius: 0;
-}
-button, input, optgroup, select, textarea {
-	margin: 0;
-	font-family: inherit;
-	font-size: inherit;
-	line-height: inherit;
-}
-button, input {
-	overflow: visible;
-}
-button, select {
-	text-transform: none;
-}
-[type=button], [type=reset], [type=submit], button {
-	-webkit-appearance: button;
-}
-.navbar-toggler {
-	padding: .25rem .75rem;
-	font-size: 1.25rem;
-	line-height: 1;
-	background-color: transparent;
-	border: 1px solid transparent;
-	border-radius: .25rem;
-}
-[type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled), button:not(:disabled) {
-	cursor: pointer;
-}
-/* @media all and (min-width:768px) */
-.navbar-expand-md .navbar-toggler {
-	display: none;
-}
-.navbar-dark .navbar-toggler {
-	color: rgba(255, 255, 255, 0.5);
-	border-color: rgba(255,255,255,.1);
-}
-.header .main-nav .navbar-toggler {
-	background: none;
-	position: absolute;
-	right: 0px;
-	top: -42px;
-	padding: 2px 9px;
-}
-.navbar-collapse {
-	-ms-flex-preferred-size: 100%;
-	flex-basis: 100%;
-	-ms-flex-positive: 1;
-	flex-grow: 1;
-	-ms-flex-align: center;
-	align-items: center;
-}
-.justify-content-end {
-	-ms-flex-pack: end !important;
-	justify-content: flex-end !important;
-}
-:not(.show).collapse {
-	display: none;
-}
-/* @media all and (min-width:768px) */
-.navbar-expand-md .navbar-collapse {
-	display: -ms-flexbox !important;
-	display: flex !important;
-	-ms-flex-preferred-size: auto;
-	flex-basis: auto;
-}
-.nav {
-	display: -ms-flexbox;
-	display: flex;
-	-ms-flex-wrap: wrap;
-	flex-wrap: wrap;
-	padding-left: 0px;
-	margin-bottom: 0px;
-	list-style: none;
-}
-.navbar-nav {
-	display: -ms-flexbox;
-	display: flex;
-	-ms-flex-direction: column;
-	flex-direction: column;
-	padding-left: 0px;
-	margin-bottom: 0px;
-	list-style: none;
-}
-/* @media all and (min-width:768px) */
-.navbar-expand-md .navbar-nav {
-	-ms-flex-direction: row;
-	flex-direction: row;
-}
-.dropdown, .dropleft, .dropright, .dropup {
-	position: relative;
-}
-.header .main-nav .nav .nav-item {
-	font-weight: normal;
-	text-transform: uppercase;
-	font-size: 13px;
-	margin-right: 15px;
-}
-/* @media all and (min-width:768px) */
-.header .main-nav .nav .nav-item {
-	margin-right: 10px;
-}
-/* @media all and (min-width:992px) */
-.header .main-nav .nav .nav-item {
-	margin-right: 15px;
-}
-.header .main-nav .nav .nav-item.active {
-	color: #71c4e0;
-}
-.header .main-nav .nav .nav-item.last {
-	margin-right: 0px;
-}
-.dropdown-toggle {
-	white-space: nowrap;
-}
-.nav-link {
-	display: block;
-	padding: .5rem 1rem;
-}
-.navbar-nav .nav-link {
-	padding-right: 0px;
-	padding-left: 0px;
-}
-/* @media all and (min-width:768px) */
-.navbar-expand-md .navbar-nav .nav-link {
-	padding-right: 0.5rem;
-	padding-left: 0.5rem;
-}
-.navbar-dark .navbar-nav .nav-link {
-	color: rgba(255, 255, 255, 0.5);
-}
-/* @media all and (min-width:768px) */
-.navbar-expand-md .navbar-nav .nav-link {
-	padding-left: 15px;
-	padding-right: 15px;
-}
-.navbar-dark .navbar-nav .active > .nav-link, .navbar-dark .navbar-nav .nav-link.active, .navbar-dark .navbar-nav .nav-link.show, .navbar-dark .navbar-nav .show > .nav-link {
-	color: #fff;
-}
-.header .main-nav .nav .nav-item .nav-link {
-	color: #fff;
-	padding-top: 15px;
-	padding-bottom: 15px;
-}
-.header .main-nav .nav .nav-item.active > .nav-link {
-	color: #71c4e0;
-	background: none;
-	font-weight: bold;
-}
-.dropdown-menu {
-	position: absolute;
-	top: 100%;
-	left: 0px;
-	z-index: 1000;
-	display: none;
-	float: left;
-	min-width: 10rem;
-	padding: .5rem 0;
-	margin: .125rem 0 0;
-	font-size: 1rem;
-	color: #212529;
-	text-align: left;
-	list-style: none;
-	background-color: #fff;
-	background-clip: padding-box;
-	border: 1px solid rgba(0,0,0,.15);
-	border-radius: .25rem;
-}
-.dropdown-menu-right {
-	right: 0px;
-	left: auto;
-}
-.navbar-nav .dropdown-menu {
-	position: static;
-	float: none;
-}
-/* @media all and (min-width:768px) */
-.navbar-expand-md .navbar-nav .dropdown-menu {
-	position: absolute;
-}
-.header .main-nav .nav .dropdown-menu {
-	-webkit-border-radius: 4px;
-	-moz-border-radius: 4px;
-	-ms-border-radius: 4px;
-	-o-border-radius: 4px;
-	border-radius: 4px;
-	-moz-background-clip: padding;
-	-webkit-background-clip: padding-box;
-	background-clip: padding-box;
-	margin: 0;
-	border: none;
-	text-transform: none;
-	min-width: 180px;
-	background: #47b3d7;
-	padding-top: 5px;
-	padding-bottom: 5px;
-}
-.dropdown-item {
-	display: block;
-	width: 100%;
-	padding: .25rem 1.5rem;
-	clear: both;
-	font-weight: 400;
-	color: #212529;
-	text-align: inherit;
-	white-space: nowrap;
-	background-color: transparent;
-	border: 0;
-}
-.header .main-nav .nav .dropdown-menu a {
-	border-bottom: 1px solid #32aad2;
-	padding: 8px 20px;
-	color: #fff;
-	-webkit-opacity: 1;
-	-moz-opacity: 1;
-	opacity: 1;
-	font-size: 14px;
-}
-.navbar-toggler-icon {
-	display: inline-block;
-	width: 1.5em;
-	height: 1.5em;
-	vertical-align: middle;
-	content: "";
-	background: no-repeat center center;
-	background-size: 100% 100%;
-}
-.navbar-dark .navbar-toggler-icon {
-	background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.5)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-}
-.header h1.logo a {
-	color: #fff;
-}
-.highlight {
-	color: #71c4e0;
-}
-.header h1.logo a .highlight {
-	color: #71c4e0;
-}
+
 </style>
 {% endblock stylings %}
 
 {% block content%}
 
-<body class="about-page" data-gr-c-s-loaded="true">
+
     <div class="header-wrapper header-wrapper-about">
         <!-- ******HEADER****** -->
 
@@ -1112,7 +757,7 @@ button, select {
     <section class="team section" id="team">
         <div class="container">
             <h2 class="title text-center">Meet the team</h2>
-            <p class="intro text-center">The team consists of three members.</p>
+            <br>
             <div class="row">
                 <div class="item col-md-6 col-12">
                     <div class="item-inner">
@@ -1187,6 +832,11 @@ button, select {
 
 
 
+
+{% endblock %}
+
+
+{% block script %}
     <!-- *****CONFIGURE STYLE (REMOVE ON YOUR PRODUCTION SITE)****** -->
 
 
@@ -1200,7 +850,4 @@ button, select {
     <!-- Style Switcher (REMOVE ON YOUR PRODUCTION SITE) -->
     <script src="assets/js/demo/style-switcher.js"></script>
 
-
-
-<div title="Scroll Back to Top" id="topcontrol" style="right: 5px; bottom: 5px; position: fixed; cursor: pointer; opacity: 0;"><svg xmlns="http://www.w3.org/2000/svg" class="svg-inline--fa fa-angle-up fa-w-10" role="img" aria-hidden="true" viewBox="0 0 320 512" focusable="false" data-icon="angle-up" data-fa-i2svg="" data-prefix="fa"><path fill="currentColor" d="M 177 159.7 l 136 136 c 9.4 9.4 9.4 24.6 0 33.9 l -22.6 22.6 c -9.4 9.4 -24.6 9.4 -33.9 0 L 160 255.9 l -96.4 96.4 c -9.4 9.4 -24.6 9.4 -33.9 0 L 7 329.7 c -9.4 -9.4 -9.4 -24.6 0 -33.9 l 136 -136 c 9.4 -9.5 24.6 -9.5 34 -0.1 Z" /></svg><!-- <i class="fa fa-angle-up"></i> --></div></body>
-{% endblock %}
+{% endblock script %}
