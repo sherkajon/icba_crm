@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" style="margin: 0; height: 100%;">
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -24,13 +24,29 @@
     {% endblock stylings %}
 
 </head>
-<body>
+<body style="margin: 0; height: 100%;">
 
 {% include 'nav.html' %}
 
-{% block content %}
+<div id="page-container" style="position: relative; min-height: 100vh;">
 
-{% endblock content %}
+        {% block content %}
+
+        {% endblock content %}
+
+
+</div>
+
+<footer id="footer" class="py-4 bg-dark text-white-50" style="
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   text-align: center;">
+    <div class="container text-center">
+        <small>Copyright &copy; Your Website</small>
+    </div>
+</footer>
+
 
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
@@ -59,13 +75,5 @@
 {% endblock script %}
 
 
-<footer>
-    <div class="container-fluid padding">
-        <div class="col-12">
-            <hr class="dark">
-            <h5>&copy; icba.org</h5>
-        </div>
-    </div>
-</footer>
 </body>
 </html>
