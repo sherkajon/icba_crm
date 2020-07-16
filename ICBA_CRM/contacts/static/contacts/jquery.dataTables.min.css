@@ -1,4 +1,11 @@
+this is a custom dataTable css to make it look exactly as mine.
 
+.truncate {
+  max-width:290px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 
 .table-wrapper {
         background: #fff;

@@ -6,6 +6,9 @@
 {% block stylings %}
 {% load static %}
 <link rel="stylesheet" href="{% static 'contacts/jquery.dataTables.min.css' %}" type="text/css">
+
+{% include 'Table_Stylings.html' %}
+
 {% endblock stylings %}
 
 {% block content%}
@@ -50,9 +53,9 @@
         </div>
     </div>
 
-    <table id="example" class="hover row-border nowrap" style="width:100%">
+    <table id="example" class="table  hover row-border stripe no-wrap" style="width:100%">
         <thead>
-        <tr style="background-color: #f9f9f9; color: black">
+        <tr style="background-color: white; color: black">
             <th>Name</th>
             <th>Category</th>
             <th>Address</th>
@@ -79,7 +82,7 @@
                                                                              data-toggle="tooltip"
                                                                              title="Edit">&#xE254;</i></a>
                 <a href="{% url 'delete_organization' pk=organization.id %}" class="confirm-delete" title="Delete"
-                   data-toggle="modal" data-target="#confirmModal" id="deleteButton{{contact.id}}"><i
+                   data-toggle="modal" data-target="#confirmModal" id="deleteButton{{organization.id}}"><i
                         class="material-icons md-24" style="font-size: 24px; color: #F44336" data-toggle="tooltip"
                         title="Delete">&#xE872;</i></a>
             </td>
@@ -88,17 +91,7 @@
         {%endfor%}
 
         </tbody>
-        <tfoot>
-        <tr>
-            <th>Name</th>
-            <th>Category</th>
-            <th>Address</th>
-            <th>Website</th>
-            <th>E-mail</th>
-            <th>Phone</th>
-            <th>Actions</th>
-        </tr>
-        </tfoot>
+
     </table>
 </div>
 
@@ -120,7 +113,7 @@
 </div>
 
 {% block script %}
-{% include 'TableScript.html' %}
+{% include 'Table_Script.html' %}
 {% endblock script %}
 
 {% endblock content%}

@@ -14,7 +14,7 @@ object-fit: contain;
 }
 
 .slide-1{
- 	background: #65758e  url("https://dynamics365cdn.azureedge.net/cvt-901a34828565b4209986392adcfcdcdcb9f0972e79ba12ad606b8f3a5a9fbf0e/pictures/pages/crm/what-is-crm/Why_Use_Dynamics365_FieldService_1083x609.jpg") no-repeat 100% center;
+ 	background: #65758e  url("/static/templates/images/slide-1.jpg") no-repeat 100% center;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -22,7 +22,7 @@ object-fit: contain;
 	min-height: 750px;
 }
 .slide-2{
-background: #65758e  url("https://www.esc.be/sites/default/files/header/ESC-microsoft-teams-5-web.png") no-repeat 100% center;
+background: #65758e  url("/static/templates/images/slide-2.png") no-repeat 100% center;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -30,7 +30,7 @@ background: #65758e  url("https://www.esc.be/sites/default/files/header/ESC-micr
 	min-height: 750px;
 }
 .slide-3{
-background: #65758e  url("https://www.ingeniumweb.com/Themes/IngeniumWeb/Content/img/slider/inGenium-CMS-Slider.jpg") no-repeat 100% center;
+background: #65758e  url("/static/templates/images/slide-3.jpg") no-repeat 100% center;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -84,17 +84,17 @@ border-top: 2px solid #b4b4b4;
  margin-bottom: 1rem;}
 
 .fa-code{
-color: #e54d26;}
+color: #44b78b;}
 
 .fa-bold{
-color: #563d7c;}
+color: #8764bb;}
 
 .fa-folder{
-color: #2163af;
+color: #0489cc;
 }
 
 .fa-code, .fa-bold, .fa-folder{
-    font-size: 4em;
+    font-size: 4.2em;
     margin: 1rem;
 }
 
@@ -117,11 +117,7 @@ color: #bb0000;
 .fa-instagram{
 color: #517fa4;
 }
-.fa-facebook:hover,
-.fa-twitter:hover,
-.fa-google-plus-g:hover,
-.fa-instagram:hover,
-.fa-youtube:hover{
+.fa-facebook:hover, .fa-twitter:hover, .fa-google-plus-g:hover, .fa-instagram:hover,.fa-youtube:hover{
     color: #d5d5d5;
 }
 
@@ -129,7 +125,7 @@ color: #517fa4;
 .margin{75% 0;}
 
 .parallax{
-    background: url("https://mocah.org/uploads/posts/5386464-desk-office-desktop-technology-laptop-computer-coding-mac-setup-network-electrical-keypad-tech-electronic-equipment-desktop-computer-portable-computer-personal-computer-notebook-iphone-phone-f.jpg") no-repeat fixed 100% center;
+    background: url("/static/templates/images/fixed-background.jpg") no-repeat fixed 100% center;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;

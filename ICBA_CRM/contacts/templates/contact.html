@@ -4,8 +4,12 @@
 
 
 {% block stylings %}
+
 {% load static %}
 <link rel="stylesheet" href="{% static 'contacts/jquery.dataTables.min.css' %}" type="text/css">
+
+{% include 'Table_Stylings.html' %}
+
 {% endblock stylings %}
 
 {% block content%}
@@ -51,9 +55,9 @@
     </div>
 
 
-    <table id="example" class="hover row-border nowrap" style="width:100%">
+    <table id="example" class="table  hover row-border stripe no-wrap" style="width:100%">
         <thead>
-        <tr style="background-color: #f9f9f9; color: black">
+        <tr style="background-color: white; color: black">
             <th>First Name</th>
             <th>Last Name</th>
             <th>E-mail</th>
@@ -88,17 +92,7 @@
 
         {%endfor%}
         </tbody>
-        <tfoot>
-        <tr>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>E-mail</th>
-            <th>Phone</th>
-            <th>Designation</th>
-            <th>Organization</th>
-            <th>Actions</th>
-        </tr>
-        </tfoot>
+
     </table>
 </div>
 
@@ -121,7 +115,7 @@
 
 
 {% block script %}
-{% include 'TableScript.html' %}
+{% include 'Table_Script.html' %}
 {% endblock script %}
 
 {% endblock content%}

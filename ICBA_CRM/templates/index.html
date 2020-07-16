@@ -5,7 +5,6 @@
 {% load static %}
 <link href="{% static 'templates/snippets/index-style.css' %}" rel="stylesheet">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://m.w3newbie.com/you-tube.css">
 {% endblock stylings %}
 
 {% block content%}
@@ -15,7 +14,7 @@
 
 <!--- Image Slider -->
 
-<div id="slides" class="carousel slide" data-ride="carousel">
+<div id="slides" class="carousel slide" data-ride="carousel" data-interval="2500">
     <ul class="carousel-indicators">
         <li data-target="#slides" data-slide-to="0" class="active"></li>
         <li data-target="#slides" data-slide-to="1"></li>
@@ -93,7 +92,7 @@
 <div class="margin"></div>
 
 <section class="parallax">
-    <div class="parallax-inner" style="background-color: rgba(0,0,0,0.6);">
+    <div class="parallax-inner" style="background-color: rgba(0,0,0,0.65);">
 
 
 <!--- Welcome Section -->
@@ -104,7 +103,7 @@
         </div>
         <hr>
         <div class="col-12">
-            <p class="lead" style="color: white;">
+            <p class="lead" style="color: white; font-size: 1.5rem;">
                 This website was built using the 'Django' web framework with 'Bootstrap' for the front end and 'SQLite'
                 for the database.</p>
         </div>
@@ -120,17 +119,17 @@
         <div class="col-xs-12 col-sm-6 col-md-4">
             <i class="fas fa-bold"></i>
             <h3>BOOTSTRAP</h3>
-            <p>Built with the latest version of Bootstrap, Bootstrap 4.</p>
+            <p style="font-size: 1.15rem">Built with the latest version of Bootstrap, Bootstrap 4.</p>
         </div>
         <div class="col-xs-12 col-sm-6 col-md-4">
             <i class="fas fa-code"></i>
             <h3>DJANGO</h3>
-            <p>Built with the latest version of Django, Django 3.0.7.</p>
+            <p style="font-size: 1.15rem">Built with the latest version of Django, Django 3.0.7.</p>
         </div>
         <div class="col-sm-12 col-md-4">
             <i class="fa fa-folder"></i>
             <h3>SQLite</h3>
-            <p>Used SQLite3 as a relational database to store data .</p>
+            <p style="font-size: 1.15rem">Used SQLite3 as a relational database to store data .</p>
         </div>
     </div>
 </div>
